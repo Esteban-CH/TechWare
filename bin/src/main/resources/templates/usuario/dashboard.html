@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Dashboard - Admin</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/dashboard.css">
+</head>
+<body>
+    <!-- Contenedor principal -->
+    <div class="container-fluid">
+        <div th:replace="fragmentos/navbar :: navbar"></div>
+
+        <!-- Layout principal -->
+        <div class="d-flex flex-grow-1 mt-5"> <!-- mt-5 agrega margen superior -->
+	    <!-- Sidebar -->
+		    <div th:replace="fragmentos/sidebar :: sidebar"></div>
+		
+		    <!-- Contenido -->
+		    <div class="content-area">
+		        <h1 class="text-center">Gestiona usuarios, roles y más.</h1>
+		        <p>Bienvenido <span th:if="${nombreCompleto != null}" th:text="${nombreCompleto}"></span></p>
+		    </div>
+	    </div>
+	</div>
+    <!-- Footer -->
+    <div th:replace="fragmentos/footer :: footer"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+</body>
+</html>

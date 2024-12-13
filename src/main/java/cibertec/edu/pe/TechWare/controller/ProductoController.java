@@ -53,6 +53,12 @@ public class ProductoController {
         return "redirect:/productos/listar";
     }
     
+    @GetMapping("/detalle/{id}") public String verDetalleProducto(@PathVariable("id") Long id, Model model) { 
+    	Producto producto = productoService.buscarPorId(id); 
+    	model.addAttribute("producto", producto); 
+    	return "producto/detalle"; 
+    }
+    
     @GetMapping("/editar/{id}")
     public String mostrarFormularioEditarProducto(@PathVariable("id") Long id, Model model) {
         Producto producto = productoService.buscarPorId(id);
