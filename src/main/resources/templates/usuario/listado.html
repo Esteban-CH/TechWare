@@ -90,6 +90,7 @@
                                 <td th:text="${usuario.rol != null ? usuario.rol.nombre : 'Sin Rol'}"></td>
                                 <td>
                                     <a th:href="@{/usuarios/editar/{id}(id=${usuario.id})}" class="btn btn-warning btn-sm">Editar</a>
+									<a th:href="@{/usuarios/detalle/{id}(id=${usuario.id})}" class="btn btn-warning btn-sm">Ver</a>
                                     <a th:href="@{/usuarios/eliminar/{id}(id=${usuario.id})}" class="btn btn-danger btn-sm" onclick="return confirm('¿Estás seguro de eliminar este usuario?')">Eliminar</a>
                                 </td>
                             </tr>

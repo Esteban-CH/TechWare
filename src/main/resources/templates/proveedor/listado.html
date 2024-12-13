@@ -92,6 +92,8 @@
                                 <td>
                                     <a th:href="@{/proveedores/editar/{id}(id=${proveedor.id})}" 
                                        class="btn btn-primary btn-sm">Editar</a>
+									<a th:href="@{/proveedores/detalle/{id}(id=${proveedor.id})}" 
+										class="btn btn-primary btn-sm">Editar</a>
                                     <a th:href="@{/proveedores/eliminar/{id}(id=${proveedor.id})}" 
                                        class="btn btn-danger btn-sm" 
                                        onclick="return confirm('¿Estás seguro de eliminar este proveedor?')">Eliminar</a>

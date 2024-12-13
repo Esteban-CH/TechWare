@@ -39,6 +39,12 @@ public class CategoriaController {
         return "redirect:/categorias/registro";
     }
     
+    @GetMapping("/detalle/{id}") public String mostrarDetalleCategoria(@PathVariable("id") Long id, Model model) { 
+    	Categoria categoria = categoriaService.buscarPorId(id); 
+    	model.addAttribute("categoria", categoria); 
+    	return "categoria/detalle"; 
+    }
+    
     @GetMapping("/editar/{id}")
     public String mostrarFormularioEditarCategoria(@PathVariable("id") Long id, Model model) {
         Categoria categoria = categoriaService.buscarPorId(id);

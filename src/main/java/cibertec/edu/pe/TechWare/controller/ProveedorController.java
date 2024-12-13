@@ -39,6 +39,12 @@ public class ProveedorController {
         return "redirect:/proveedores";
     }
 
+    @GetMapping("/detalle/{id}") public String mostrarDetalleProveedor(@PathVariable("id") Long id, Model model) { 
+    	Proveedor proveedor = proveedorService.buscarPorId(id); 
+    	model.addAttribute("proveedor", proveedor); 
+    	return "proveedor/detalle"; 
+    }
+    
     @GetMapping("/editar/{id}")
     public String mostrarFormularioEditar(@PathVariable("id") Long id, Model model) {
         Proveedor proveedor = proveedorService.buscarPorId(id);
