@@ -15,4 +15,5 @@ public interface UsuarioService {
 	
  	public abstract Usuario findByNombreUsuario(String nombreUsuario);
  	boolean validarUsuario(Usuario usuario, HttpSession session);
+ 	int contarUsuarios();
 }

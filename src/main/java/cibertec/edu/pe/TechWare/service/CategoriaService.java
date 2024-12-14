@@ -11,4 +11,5 @@ public interface CategoriaService {
 	public abstract Categoria registrarCategoria(Categoria categoria);
 	public abstract Categoria actualizarCategoria(Categoria categoria);
 	void eliminarCategoria(Long id);
+	int contarCategorias();
 	}

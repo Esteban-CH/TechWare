@@ -40,4 +40,9 @@ public class ProveedorServiceImpl implements ProveedorService{
 		proveedorRepository.deleteById(id);
 	}
 
+	@Override
+	public int contarProveedores() {
+		return (int) proveedorRepository.count();
+	}
+
 }

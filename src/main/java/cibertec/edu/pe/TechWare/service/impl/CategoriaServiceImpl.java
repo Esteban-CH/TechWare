@@ -40,4 +40,9 @@ public class CategoriaServiceImpl implements CategoriaService{
 		categoriaRepository.deleteById(id);
 	}
 
+	@Override
+	public int contarCategorias() {
+		return (int) categoriaRepository.count();
+	}
+
 }

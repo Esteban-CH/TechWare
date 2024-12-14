@@ -11,4 +11,5 @@ public interface ProveedorService {
 	public abstract Proveedor registrarProveedor(Proveedor proveedor);
 	public abstract Proveedor actualizarProveedor(Proveedor proveedor);
 	void eliminarProveedor(Long id);
+	int contarProveedores();
 }

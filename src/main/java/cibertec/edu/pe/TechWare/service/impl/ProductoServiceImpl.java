@@ -56,4 +56,9 @@ public class ProductoServiceImpl implements ProductoService{
 		productoRepository.deleteById(id);
 	}
 
+	@Override
+	public int contarProductos() {
+		return (int) productoRepository.count();
+	}
+
 }

@@ -13,4 +13,5 @@ public interface ProductoService {
 	public abstract Producto registrarProducto(Producto producto, MultipartFile file);
 	public abstract Producto actualizarProducto(Producto producto, MultipartFile file);
 	void eliminarProducto(Long id);
+	int contarProductos();
 }

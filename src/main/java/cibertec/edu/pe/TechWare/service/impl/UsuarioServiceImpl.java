@@ -56,5 +56,10 @@ public class UsuarioServiceImpl  implements UsuarioService{
 	    }
 	    return false;
 	}
+
+	@Override
+	public int contarUsuarios() {
+		return (int) usuarioRepository.count();
+	}
 	
 }
