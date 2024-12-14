@@ -58,5 +58,10 @@ public class HomeController {
         return "usuario/home";
     }
 	
+	@GetMapping("/contacto")
+	public String contacto() {
+		return "contacto/contacto";
+	}
+	
 	
 }
