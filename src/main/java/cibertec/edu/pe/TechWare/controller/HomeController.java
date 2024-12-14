@@ -60,7 +60,7 @@ public class HomeController {
 	
 	@GetMapping("/contacto")
 	public String contacto() {
-		return "contacto/home";
+		return "contacto/contacto";
 	}
 	
 	
