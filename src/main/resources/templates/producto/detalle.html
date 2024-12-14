@@ -4,6 +4,7 @@
     <title>Detalle del Producto</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/dashboard.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
     <style>
         /* Estilo personalizado */
         body {
@@ -28,12 +29,25 @@
             width: 100%;
         }
         .product-title {
-            margin-bottom: 0;  /* Eliminé el margen inferior del título */
+            margin-bottom: 20px;  /* Ajusté el margen inferior del título */
+            text-align: center;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
         }
         .product-content {
-            margin-top: -10px;  /* Reduje el margen superior del contenido */
             padding-top: 0;  /* Eliminé el padding superior del contenido */
             padding-bottom: 0; /* Eliminé el padding inferior del contenido */
+        }
+        .button-group {
+            display: flex;
+            justify-content: center; /* Centrar los botones */
+            gap: 1rem; /* Espaciado entre los botones */
+            margin-top: 1.5rem;
+            width: 100%; /* Hacer que ocupen el ancho */
+        }
+        .button-group .btn {
+            flex: 1; /* Hacer que los botones ocupen el ancho completo */
+            max-width: 200px; /* Limitar el ancho máximo de los botones */
         }
     </style>
 </head>
@@ -49,28 +63,33 @@
 
             <!-- Contenido Principal -->
             <div class="content-area container-fluid">
-                <h1 class="text-center product-title">Detalle del Producto</h1>
                 <div class="content-wrapper">
-                    <div class="row product-details">
-                        <!-- Imagen del Producto -->
-                        <div class="col-md-4 d-flex justify-content-center">
-                            <img th:src="@{/img/{nombreImagen}(nombreImagen=${producto.imagenUrl})}" 
-                                 alt="Imagen del Producto" 
-                                 class="img-thumbnail product-image">
-                        </div>
-                        <!-- Detalles del Producto -->
-                        <div class="col-md-8 product-content">
-                            <div>
-                                <p><strong>Nombre:</strong> <span th:text="${producto.nombre}"></span></p>
-                                <p><strong>Descripción:</strong> <span th:text="${producto.descripcion}"></span></p>
-                                <p><strong>Precio:</strong> <span th:text="${producto.precio}"></span></p>
-                                <p><strong>Stock:</strong> <span th:text="${producto.stock}"></span></p>
-                                <p><strong>Marca:</strong> <span th:text="${producto.marca}"></span></p>
-                                <p><strong>Categoría:</strong> <span th:text="${producto.categoria.nombre}"></span></p>
-                                <p><strong>Proveedor:</strong> <span th:text="${producto.proveedor.nombre}"></span></p>
-                                <p><strong>Fecha de Creación:</strong> <span th:text="${producto.fechaCreacion}"></span></p>
-                                <p><strong>Fecha de Actualización:</strong> <span th:text="${producto.fechaActualizacion}"></span></p>
-                                <a class="btn btn-primary" th:href="@{/productos/listar}">Volver a la lista de productos</a>
+                    <div class="product-details">
+                        <h1 class="product-title">Detalle del Producto</h1>
+                        <div class="row">
+                            <!-- Imagen del Producto -->
+                            <div class="col-md-4 d-flex justify-content-center">
+                                <img th:src="@{/img/{nombreImagen}(nombreImagen=${producto.imagenUrl})}" 
+                                     alt="Imagen del Producto" 
+                                     class="img-thumbnail product-image">
+                            </div>
+                            <!-- Detalles del Producto -->
+                            <div class="col-md-8 product-content">
+                                <div>
+                                    <p><strong>Nombre:</strong> <span th:text="${producto.nombre}"></span></p>
+                                    <p><strong>Descripción:</strong> <span th:text="${producto.descripcion}"></span></p>
+                                    <p><strong>Precio:</strong> <span th:text="${producto.precio}"></span></p>
+                                    <p><strong>Stock:</strong> <span th:text="${producto.stock}"></span></p>
+                                    <p><strong>Marca:</strong> <span th:text="${producto.marca}"></span></p>
+                                    <p><strong>Categoría:</strong> <span th:text="${producto.categoria.nombre}"></span></p>
+                                    <p><strong>Proveedor:</strong> <span th:text="${producto.proveedor.nombre}"></span></p>
+                                    <p><strong>Fecha de Creación:</strong> <span th:text="${producto.fechaCreacion}"></span></p>
+                                    <p><strong>Fecha de Actualización:</strong> <span th:text="${producto.fechaActualizacion}"></span></p>
+                                    <div class="button-group">
+                                        <a href="/productos/listar" class="btn btn-secondary">Volver al Listado</a>
+                                        <a th:href="@{/productos/editar/{id}(id=${producto.id})}" class="btn btn-primary">Editar Producto</a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>

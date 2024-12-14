@@ -4,6 +4,7 @@
     <title>Detalle de Proveedor</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/dashboard.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body {
             background-color: #f8f9fa;
@@ -46,6 +47,8 @@
                         <p><strong>Dirección:</strong> <span th:text="${proveedor.direccion}"></span></p>
                         <p><strong>Teléfono:</strong> <span th:text="${proveedor.telefono}"></span></p>
                         <p><strong>Email:</strong> <span th:text="${proveedor.email}"></span></p>
+                        <p><strong>Fecha de Creación:</strong> <span th:text="${proveedor.fechaCreacion}"></span></p>
+                        <p><strong>Fecha de Actualización:</strong> <span th:text="${proveedor.fechaActualizacion}"></span></p>
                         <div class="d-flex justify-content-between">
                             <a href="/proveedores" class="btn btn-secondary">Volver al Listado</a>
                             <a th:href="@{/proveedores/editar/{id}(id=${proveedor.id})}" class="btn btn-primary">Editar Proveedor</a>
