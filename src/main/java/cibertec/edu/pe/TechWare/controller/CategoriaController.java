@@ -36,7 +36,7 @@ public class CategoriaController {
     public String registrarCategoria(@ModelAttribute Categoria categoria, RedirectAttributes redirectAttributes) {
         categoriaService.registrarCategoria(categoria);
         redirectAttributes.addFlashAttribute("mensaje", "Categoría registrada exitosamente.");
-        return "redirect:/categorias/registro";
+        return "redirect:/categorias/listar";
     }
     
     @GetMapping("/detalle/{id}") public String mostrarDetalleCategoria(@PathVariable("id") Long id, Model model) { 

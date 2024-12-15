@@ -43,7 +43,7 @@
         }
         .button-group {
             display: flex;
-            justify-content: flex-end;
+            justify-content: center; /* Centrar los botones */
             gap: 1rem;
             margin-top: 1.5rem;
         }
@@ -53,13 +53,14 @@
             padding: 20px;
             border-radius: 5px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            max-width: 900px;  /* Ajusta el ancho máximo */
+            max-width: 1200px;  /* Ajusta el ancho máximo */
+            width: 100%;
             margin: auto;
             display: flex;
             gap: 20px; /* Añade espacio entre las secciones */
         }
         .form-section {
-            flex: 1;
+            flex: 2; /* Hacer el formulario más ancho */
             margin-right: 20px; /* Espacio adicional entre el formulario y la imagen */
         }
         .image-section {
@@ -95,23 +96,23 @@
                         <form th:action="@{/productos/registro}" th:object="${producto}" method="post" enctype="multipart/form-data">
                             <div class="form-group mb-3">
                                 <label for="nombre">Nombre del Producto</label>
-                                <input type="text" id="nombre" name="nombre" class="form-control" th:field="*{nombre}" required>
+                                <input type="text" id="nombre" name="nombre" class="form-control" th:field="*{nombre}" placeholder="Ingrese el nombre del producto" required>
                             </div>
                             <div class="form-group mb-3">
                                 <label for="descripcion">Descripción</label>
-                                <textarea id="descripcion" name="descripcion" class="form-control" th:field="*{descripcion}" required></textarea>
+                                <textarea id="descripcion" name="descripcion" class="form-control" th:field="*{descripcion}" placeholder="Ingrese la descripción del producto" required></textarea>
                             </div>
                             <div class="form-group mb-3">
                                 <label for="precio">Precio</label>
-                                <input type="number" id="precio" name="precio" class="form-control" th:field="*{precio}" step="0.01" required>
+                                <input type="number" id="precio" name="precio" class="form-control" th:field="*{precio}" placeholder="Ingrese el precio del producto" step="0.01" required>
                             </div>
                             <div class="form-group mb-3">
                                 <label for="stock">Stock</label>
-                                <input type="number" id="stock" name="stock" class="form-control" th:field="*{stock}" required>
+                                <input type="number" id="stock" name="stock" class="form-control" th:field="*{stock}" placeholder="Ingrese el stock del producto" required>
                             </div>
                             <div class="form-group mb-3">
                                 <label for="marca">Marca</label>
-                                <input type="text" id="marca" name="marca" class="form-control" th:field="*{marca}" required>
+                                <input type="text" id="marca" name="marca" class="form-control" th:field="*{marca}" placeholder="Ingrese la marca del producto" required>
                             </div>
                             <div class="form-group mb-3">
                                 <label for="categoria">Categoría</label>
@@ -129,7 +130,7 @@
                                 <label for="imagen">Imagen</label>
                                 <input type="file" id="file" class="form-control" name="file" accept="image/*">
                             </div>
-                            <div class="d-flex justify-content-between">
+                            <div class="button-group">
                                 <a href="/productos/listar" class="btn btn-secondary">Volver al Listado</a>
                                 <button type="submit" class="btn btn-primary">Registrar Producto</button>
                             </div>
