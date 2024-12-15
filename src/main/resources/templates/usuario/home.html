@@ -27,15 +27,6 @@
         .navbar-custom .navbar-collapse {
             justify-content: center;
         }
-        .content-area {
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 20px;
-        }
         .carousel-item {
             height: 500px;
             background-size: cover;
@@ -52,40 +43,45 @@
             padding: 20px;
             border-radius: 10px;
         }
-        h1 {
-            font-family: 'Montserrat', sans-serif;
-            margin-bottom: 20px;
+ 
+        .product-section {
+            padding: 50px 20px;
+            background-color: #ffffff;
         }
-        p {
+        .product-section h2 {
+            font-family: 'Montserrat', sans-serif;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+        .product-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: none;
+        }
+        .product-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+        .product-card img {
+            height: 200px;
+            object-fit: cover;
+        }
+        .product-info h5 {
             font-size: 1.2rem;
-            margin-bottom: 20px;
+            font-weight: 700;
+            margin-top: 15px;
         }
-        footer {
-            width: 100%;
-            background-color: #343a40;
+        .product-info .price {
+            font-size: 1.4rem;
+            color: #007bff;
+            font-weight: 700;
+        }
+        .btn-buy {
+            background-color: #007bff;
             color: #ffffff;
-            padding: 20px 0;
-            position: absolute;
-            bottom: 0;
+            font-weight: 700;
         }
-        .footer-links {
-            display: flex;
-            justify-content: space-around;
-            margin-bottom: 20px;
-        }
-        .footer-links a {
-            color: #ffffff;
-            text-decoration: none;
-            font-family: 'Montserrat', sans-serif;
-        }
-        .social-icons {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-        }
-        .social-icons a {
-            color: #ffffff;
-            font-size: 1.5rem;
+        .btn-buy:hover {
+            background-color: #0056b3;
         }
     </style>
 </head>
@@ -124,6 +120,65 @@
             <span class="visually-hidden">Next</span>
         </button>
     </div>
+
+<section class="product-section">
+    <h2>Productos en Oferta</h2>
+    <div class="container">
+        <div class="row g-4 justify-content-center">
+            <div class="col-md-4 col-lg-2">
+                <div class="card product-card">
+                    <img src="/tec/smart.jpeg" class="card-img-top" alt="Producto 1">
+                    <div class="card-body product-info text-center">
+                        <h5 class="card-title">Smartphone X1</h5>
+                        <p class="price">S/999</p>
+                        <button class="btn btn-buy btn-sm">Comprar</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-lg-2">
+                <div class="card product-card">
+                    <img src="/tec/lenovo.jpeg" class="card-img-top" alt="Producto 2">
+                    <div class="card-body product-info text-center">
+                        <h5 class="card-title">Laptop Pro</h5>
+                        <p class="price">S/2,599</p>
+                        <button class="btn btn-buy btn-sm">Comprar</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-lg-2">
+                <div class="card product-card">
+                    <img src="/tec/audifono.jpeg" class="card-img-top" alt="Producto 3">
+                    <div class="card-body product-info text-center">
+                        <h5 class="card-title">Audífonos Z+</h5>
+                        <p class="price">S/199</p>
+                        <button class="btn btn-buy btn-sm">Comprar</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-lg-2">
+                <div class="card product-card">
+                    <img src="/tec/watch.jpg" class="card-img-top" alt="Producto 4">
+                    <div class="card-body product-info text-center">
+                        <h5 class="card-title">Smartwatch Y</h5>
+                        <p class="price">S/399</p>
+                        <button class="btn btn-buy btn-sm">Comprar</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-lg-2">
+                <div class="card product-card">
+                    <img src="/tec/tecladoo.jpg" class="card-img-top" alt="Producto 5">
+                    <div class="card-body product-info text-center">
+                        <h5 class="card-title">Teclado Gaming</h5>
+                        <p class="price">S/299</p>
+                        <button class="btn btn-buy btn-sm">Comprar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 
     <!-- Footer -->
 	<div th:replace="fragmentos/footer_cliente :: footer_cliente"></div>

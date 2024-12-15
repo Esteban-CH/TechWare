@@ -68,5 +68,14 @@ public class HomeController {
 		return "usuario/contacto";
 	}
 	
+	@GetMapping("/productos")
+	public String productos() {
+		return "usuario/productos";
+	}
+	
+	@GetMapping("/servicios")
+	public String servicios() {
+		return "usuario/servicios";
+	}
 	
 }
