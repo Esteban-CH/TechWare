@@ -3,160 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <title>Home - Nosotros</title>
+	<link rel="icon" href="/tec/logon.jpg" type="image/x-icon">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <style>
-        body {
-            background-color: #f8f9fa;
-            font-family: 'Open Sans', sans-serif;
-        }
-        .navbar-custom {
-            background-color: #343a40;
-            width: 100%;
-        }
-        .navbar-custom .navbar-brand,
-        .navbar-custom .nav-link {
-            color: #ffffff;
-            font-family: 'Montserrat', sans-serif;
-        }
-        .navbar-custom .navbar-collapse {
-            justify-content: center;
-        }
-        .carousel-item {
-            height: 500px;
-            background-size: cover;
-            background-position: center;
-        }
-        .carousel-caption {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            text-align: center;
-            color: #ffffff;
-            background-color: rgba(0, 0, 0, 0.5);
-            padding: 20px;
-            border-radius: 10px;
-        }
-        h1 {
-            font-family: 'Montserrat', sans-serif;
-            margin-bottom: 20px;
-        }
-        .card-img-top {
-            transition: transform 0.3s ease-in-out;
-        }
-        .card-img-top:hover {
-            transform: scale(1.05);
-        }
-        main {
-            flex-grow: 1;
-        }      
-        .navbar-custom .navbar-brand img {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .navbar-custom .navbar-brand:hover img {
-            transform: scale(1.1);
-            box-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
-        }
-        .navbar-custom .navbar-brand {
-            display: flex;
-            align-items: center;
-        }
-        .navbar-custom .navbar-brand span {
-            margin-left: 10px; 
-            font-size: 1.5rem;
-            color: white;
-            font-weight: bold;
-        }
-        .team-photo-container {
-            width: 250px;
-            height: 250px;
-            margin: 0 auto;
-            overflow: hidden;
-            border-radius: 50%;
-            border: 5px solid #ddd;
-        }
-        .team-photo {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        .team-photo:hover {
-            transform: scale(1.1);
-        }        
-        footer {
-            width: 100%;
-            background-color: #343a40;
-            color: #ffffff;
-            padding: 20px 0;
-            text-align: center;
-        }
-        .footer-links {
-            display: flex;
-            justify-content: space-around;
-            margin-bottom: 20px;
-        }
-        .footer-links a {
-            color: #ffffff;
-            text-decoration: none;
-            font-family: 'Montserrat', sans-serif;
-        }
-        .social-icons {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-        }
-        .social-icons a {
-            color: #ffffff;
-            font-size: 1.5rem;
-            transition: transform 0.3s ease, color 0.3s ease;
-        }
-        .social-icons a:hover {
-            transform: scale(1.2);
-            color: #1da1f2;
-        }
-    </style>
+    <link rel="stylesheet" href="/css/nosotros.css">
 </head>
 <body>
-    
-    <nav class="navbar navbar-expand-lg navbar-custom">
-        <div class="container">
-            <a class="navbar-brand" href="#">
-                <img src="/tec/logon.jpg" alt="Techware Logo">
-                <span>TechWare</span>
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link active" th:href="@{/usuarios/home}">Inicio</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" th:href="@{/usuarios/nosotros}">Nosotros</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" th:href="@{/usuarios/contactos}">Contáctanos</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Productos</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Servicios</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/logout">Cerrar Sesión</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
+	
+	<div th:replace="fragmentos/navbar_cliente :: navbar_cliente"></div>
     
     <header>
         <div id="carouselExample" class="carousel slide" data-bs-ride="carousel" data-bs-interval="2000">
@@ -253,21 +108,7 @@
         </div>
     </section>
 
-    <footer>
-        <div class="footer-links">
-            <a href="#">Inicio</a>
-            <a href="#">Nosotros</a>
-            <a href="#">Contáctanos</a>
-            <a href="#">Tiendas Tecnológicas</a>
-        </div>
-        <div class="social-icons">
-            <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
-            <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
-            <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
-            <a href="https://www.linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-        </div>
-        <p class="text-center mt-3">&copy; 2024 TechWare. Todos los derechos reservados.</p>
-    </footer>
+	<div th:replace="fragmentos/footer_cliente :: footer_cliente"></div>
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
