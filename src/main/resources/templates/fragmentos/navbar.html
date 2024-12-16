@@ -1,10 +1,14 @@
 <div th:fragment="navbar">
 	<!-- Navbar -->
         <nav class="navbar">
+        <img src="/tec/logon.jpg" alt="Techware Logo" width="50px" height="50px">
             <a class="navbar-brand" href="#">TechWare</a>
             <div>
-                <a class="nav-link d-inline" href="#">Inicio</a>
-                <a class="nav-link d-inline" href="#">Configuración</a>
+                <a class="nav-link d-inline" href="/usuarios/home">Inicio</a>
+                <a class="nav-link d-inline" href="/usuarios/nosotros">Nosotros</a>
+                <a class="nav-link d-inline" href="/usuarios/contactos">Contáctanos</a>
+                <a class="nav-link d-inline" href="/usuarios/productos">Productos</a>
+                <a class="nav-link d-inline" href="/usuarios/servicios">Servicios</a>
                 <a class="nav-link d-inline" href="/logout">Cerrar Sesión</a>
             </div>
         </nav>
