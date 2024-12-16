@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Productos - Cliente</title>
+    <link rel="icon" href="/tec/logon.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="/css/nosotros.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: 'Open Sans', sans-serif;
+        }
+        .product-section {
+            padding: 50px 20px;
+           /* background-image: url('/tec/fondou.jpg');*/
+            background-size: cover;
+            background-position: center;
+            color: black;
+        }
+        .product-section h2 {
+            font-family: 'Montserrat', sans-serif;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+        .product-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: none;
+        }
+        .product-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+        .product-card img {
+            height: 200px;
+            object-fit: cover;
+        }
+        .product-info h5 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-top: 15px;
+        }
+        .product-info .price {
+            font-size: 1.4rem;
+            color: #007bff;
+            font-weight: 700;
+        }
+        .btn-buy {
+            background-color: #007bff;
+            color: #ffffff;
+            font-weight: 700;
+        }
+        .btn-buy:hover {
+            background-color: #0056b3;
+        }
+        .carousel-inner img {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+        }
+        .carousel-caption {
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            left: 50%;
+            transform: translateX(-50%);
+            position: absolute;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+    </style>
+</head>
+<body>
+    
+    <div th:replace="fragmentos/navbar_cliente :: navbar_cliente"></div>
+
+    <!-- Banner de Productos -->
+    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="/tec/producto_img1.jpg" class="d-block w-100" alt="Productos Banner 1">
+                <div class="carousel-caption">
+                    <h2>Productos</h2>
+                    <p>Descubre nuestros productos más populares y encuentra lo que necesitas.</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="/tec/producto_img2.jpg" class="d-block w-100" alt="Productos Banner 2">
+                <div class="carousel-caption">
+                    <h2>Calidad Garantizada</h2>
+                    <p>Te ofrecemos los mejores productos con la más alta calidad.</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="/tec/producto_img3.jpg" class="d-block w-100" alt="Productos Banner 3">
+                <div class="carousel-caption">
+                    <h2>Innovación</h2>
+                    <p>Mantente al día con las últimas innovaciones tecnológicas.</p>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+    <section class="product-section">
+        <h2>Productos Populares</h2>
+        <div class="container">
+            <div class="row g-4 justify-content-center">
+                <div class="col-md-4 col-lg-3">
+                    <div class="card product-card">
+                        <img src="/tec/monitor.jpeg" class="card-img-top" alt="Monitor">
+                        <div class="card-body product-info text-center">
+                            <h5 class="card-title">Monitor 4K UltraHD</h5>
+                            <p class="price">S/1,299</p>
+                            <button class="btn btn-buy btn-sm">Comprar</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-lg-3">
+                    <div class="card product-card">
+                        <img src="/tec/mouseg.jpg" class="card-img-top" alt="Mouse">
+                        <div class="card-body product-info text-center">
+                            <h5 class="card-title">Mouse Gaming RGB</h5>
+                            <p class="price">S/149</p>
+                            <button class="btn btn-buy btn-sm">Comprar</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-lg-3">
+                    <div class="card product-card">
+                        <img src="/tec/tablet.jpg" class="card-img-top" alt="Tablet">
+                        <div class="card-body product-info text-center">
+                            <h5 class="card-title">Tablet Pro X</h5>
+                            <p class="price">S/1,599</p>
+                            <button class="btn btn-buy btn-sm">Comprar</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-lg-3">
+                    <div class="card product-card">
+                        <img src="/tec/headset.jpeg" class="card-img-top" alt="Headset">
+                        <div class="card-body product-info text-center">
+                            <h5 class="card-title">Headset Gaming 7.1</h5>
+                            <p class="price">S/249</p>
+                            <button class="btn btn-buy btn-sm">Comprar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div th:replace="fragmentos/footer_cliente :: footer_cliente"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</body>
+</html>

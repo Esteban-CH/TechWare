@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Servicios - Cliente</title>
+    <link rel="icon" href="/tec/logon.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="/css/nosotros.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: 'Open Sans', sans-serif;
+        }
+        .carousel-inner img {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+        }
+        .carousel-caption {
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .service-section {
+            padding: 50px 20px;
+            background-color: #ffffff;
+            color: black;
+        }
+        .service-section h2 {
+            font-family: 'Montserrat', sans-serif;
+            margin-bottom: 20px;
+            text-align: center;
+            animation: fadeInUp 2s ease-out;
+        }
+        .service-section p {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .service-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: none;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        .service-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+        .service-card img {
+            height: 200px;
+            object-fit: cover;
+        }
+        .service-info h5 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-top: 15px;
+        }
+        .service-info p {
+            font-size: 1rem;
+            margin-bottom: 20px;
+        }
+        .btn-book {
+            background-color: #007bff;
+            color: #ffffff;
+            font-weight: 700;
+        }
+        .btn-book:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div th:replace="fragmentos/navbar_cliente :: navbar_cliente"></div>
+
+    <!-- Banner de Imágenes -->
+    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="/tec/servicio_img1.jpg" class="d-block w-100" alt="Imagen 1">
+                <div class="carousel-caption">
+                    <h2>NUESTROS SERVICIOS</h2>
+                    <p>Ofrecemos una variedad de servicios personalizados para satisfacer todas tus necesidades tecnológicas.</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="/tec/servicio_img2.jpg" class="d-block w-100" alt="Imagen 2">
+                <div class="carousel-caption">
+                    <h2>NUESTROS SERVICIOS</h2>
+                    <p>Desde consultoría personalizada y desarrollo de software hasta soporte técnico 24/7 y mantenimiento de equipos.</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="/tec/servicio_img3.jpg" class="d-block w-100" alt="Imagen 3">
+                <div class="carousel-caption">
+                    <h2>NUESTROS SERVICIOS</h2>
+                    <p>Estamos aquí para ayudarte a alcanzar tus objetivos tecnológicos con nuestros servicios especializados.</p>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+    <!-- Sección "Nuestros Servicios" -->
+    <section class="service-section">
+        <div class="container">
+            <h2 class="mb-4">Tipos de Servicios que Estamos Ofreciendo</h2>
+            <div class="row g-4 justify-content-center">
+                <div class="col-md-4 col-lg-3">
+                    <div class="card service-card">
+                        <img src="/tec/consultaria.jpg" class="card-img-top" alt="Consultoría">
+                        <div class="card-body service-info text-center">
+                            <h5 class="card-title">Consultoría Personalizada</h5>
+                            <p>Ofrecemos asesoramiento experto en soluciones tecnológicas a medida para tu negocio.</p>
+                            <button class="btn btn-book btn-sm">Reservar</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-lg-3">
+                    <div class="card service-card">
+                        <img src="/tec/DesarrolloSoftware.jpg" class="card-img-top" alt="Desarrollo de Software">
+                        <div class="card-body service-info text-center">
+                            <h5 class="card-title">Desarrollo de Software</h5>
+                            <p>Desarrollamos soluciones de software personalizadas que se ajustan a tus necesidades.</p>
+                            <button class="btn btn-book btn-sm">Reservar</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-lg-3">
+                    <div class="card service-card">
+                        <img src="/tec/soporte.jpg" class="card-img-top" alt="Soporte Técnico">
+                        <div class="card-body service-info text-center">
+                            <h5 class="card-title">Soporte Técnico 24/7</h5>
+                            <p>Te ofrecemos soporte continuo para resolver cualquier inconveniente con tus sistemas.</p>
+                            <button class="btn btn-book btn-sm">Solicitar</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-lg-3">
+                    <div class="card service-card">
+                        <img src="/tec/mantenimiento.jpg" class="card-img-top" alt="Mantenimiento de Equipos">
+                        <div class="card-body service-info text-center">
+                            <h5 class="card-title">Mantenimiento de Equipos</h5>
+                            <p>Realizamos mantenimientos preventivos y correctivos para tus equipos tecnológicos.</p>
+                            <button class="btn btn-book btn-sm">Solicitar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div th:replace="fragmentos/footer_cliente :: footer_cliente"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script>
+        // Iniciar el carrusel automáticamente
+        var myCarousel = document.querySelector('#carouselExampleIndicators');
+        var carousel = new bootstrap.Carousel(myCarousel, {
+          interval: 5000, // Cambiar cada 5 segundos
+        });
+    </script>
+</body>
+</html>

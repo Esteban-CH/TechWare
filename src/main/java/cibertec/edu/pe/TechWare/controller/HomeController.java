@@ -58,10 +58,24 @@ public class HomeController {
         return "usuario/home";
     }
 	
-	@GetMapping("/contacto")
-	public String contacto() {
-		return "contacto/contacto";
+	@GetMapping("/nosotros")
+	public String nosotros() {
+		return "usuario/Nosotros";
 	}
 	
+	@GetMapping("/contactos")
+	public String contactos() {
+		return "usuario/contacto";
+	}
+	
+	@GetMapping("/productos")
+	public String productos() {
+		return "usuario/productos";
+	}
+	
+	@GetMapping("/servicios")
+	public String servicios() {
+		return "usuario/servicios";
+	}
 	
 }
